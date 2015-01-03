@@ -1,13 +1,13 @@
 package markit
 
 import(
-	"strings"
+	"bytes"
 )
 
 const (
 	BaseUrl		= "http://dev.markitondemand.com/Api/v2"
 )
 
-func sanitize(body string) string {
-	return strings.Replace(strings.TrimSpace(body), "\"", "", -1)
+func sanitize(body []byte) []byte {
+	return bytes.Replace(bytes.TrimSpace(body), []byte{'"'}, []byte{}, -1)
 }
