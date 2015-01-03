@@ -13,4 +13,11 @@ func main() {
 		log.Fatalln(err)
 	}
 	fmt.Println(quote)
+
+	companies, err := markit.Lookup("aapl")
+
+	if err != nil {
+		log.Fatalln(err)
+	}
+	fmt.Println(companies)
 }
