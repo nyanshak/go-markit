@@ -1,19 +1,28 @@
 package markit
 
+import (
+	"time"
+)
+
 type InteractiveChartData struct {
-	Labels		Labels			`json:"Labels"`
+	Labels		*Labels			`json:"Labels"`
 	Positions	[]float64		`json:"Positions"`
-	Dates		[]string		`json:"Dates"`			// TODO: change to time
+	Dates		[]time.Time		`json:"Dates"`
 	Elements	[]ElementData	`json:"Elements"`
 }
 
+// Note: Labels currently incomplete, need further testing
 type Labels struct {
-	// TODO: Fill label with proper information
+	Dates		[]time.Time     `json:"dates"`
+	Pos			[]string		`json:"pos"`
+	Priorities	[]string		`json:"priorities"`
+	Text		[]string		`json:"text"`
+	utcDates	[]time.Time		`json:"utcDates"`
 }
 
 type ElementData struct {
 	Currency	string		`json:"Currency"`
-	TimeStamp	string		`json:"TimeStamp"`			// TODO: change to time
+	TimeStamp	time.Time	`json:"TimeStamp"`
 	Symbol		string		`json:"Symbol"`
 	Type		string		`json:"Price"`
 	DataSeries	DataSeries	`json:"DataSeries"`
