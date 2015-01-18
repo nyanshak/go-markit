@@ -6,7 +6,7 @@ It supports the Quote and Lookup endpoints (no support yet for interactive chart
 
 ## TODO
 
-Add support for interactive charts
+Add support for interactive charts (need help with this)
 
 ## License
 
